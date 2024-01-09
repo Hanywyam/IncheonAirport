@@ -9,7 +9,7 @@
   align-items: center;
   box-sizing: border-box;
 }
-.header .logo a {
+.header .logo {
   background: center / contain no-repeat url("../../../public/images/logo.jpg");
 }
 .header .logo em {

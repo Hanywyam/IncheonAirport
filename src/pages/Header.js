@@ -1,5 +1,6 @@
 import React from "react";
 import headerstyle from "../assets/style/header.module.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const path = process.env.PUBLIC_URL;
@@ -7,16 +8,16 @@ const Header = () => {
   return (
     <header className={headerstyle.header}>
       <h1 className={headerstyle.logo}>
-        <a href="/">
+        <Link to="/">
           <em>인천국제공항</em>
-        </a>
+        </Link>
       </h1>
 
       <nav className={headerstyle.navigation}>
         {/* <li>주차요금 안내</li> */}
-        <li>주차장 실시간 현황</li>
-        <li>주차장 예약</li>
-        <li>예약 조회/변경/취소</li>
+        <Link to="/parking">주차장 실시간 현황</Link>
+        <Link to="/reserv">주차장 예약</Link>
+        <Link to="/booking">예약 조회/변경/취소</Link>
       </nav>
     </header>
   );
