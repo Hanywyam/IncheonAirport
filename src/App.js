@@ -1,10 +1,14 @@
-import React from "react";
 import "./App.css";
+import Header from "./pages/Header";
+import Home from "./pages/Home";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
     <>
-      <h1>리액트</h1>
+      <Header />
+      <Home />
+      <Footer />
     </>
   );
 }

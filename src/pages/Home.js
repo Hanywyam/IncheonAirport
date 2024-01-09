@@ -1,11 +1,10 @@
-import React from "react";
+import homestyle from "../assets/style/home.module.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className={homestyle.homeContn}>
       <h2>
-        Incheon Airport
-        <strong>공항의 역사를 새로 쓰다</strong>
+        <em>Incheon Airport</em>공항의 역사를 새로 쓰다
       </h2>
     </div>
   );

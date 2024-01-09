@@ -1,0 +1,23 @@
+/* home */
+.homeContn {
+  background-color: #222;
+  width: calc(100% - 100px);
+  height: 90vh;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: center / cover no-repeat url("../../../public/images/main_bg.jpg");
+}
+.homeContn h2 {
+  color: #fff;
+  position: absolute;
+  top: 35%;
+  left: 9vw;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.homeContn h2 em {
+  display: block;
+  font-weight: 100;
+}

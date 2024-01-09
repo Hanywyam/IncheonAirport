@@ -1,0 +1,16 @@
+/* footer */
+
+.footerContn {
+  width: 80%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+.footerList {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
