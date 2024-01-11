@@ -9,6 +9,19 @@
 ## 240110
 
 - 주차장 실시간 현황 API 연결
+  - Install packages
+    - react-router-dom
+    - axios
+
+> 문제 1 : 사용하는 API 데이터포맷도 XML 이었다.
+>
+> > 유형은 [xml, json]이었지만, default=xml로 작성되어 있었다. json만 다뤄봐서 xml은 생소했다. [TCPschool:xml](https://www.tcpschool.com/xml/intro)
+
+> 문제 2 : Node.js는 백엔드 라이브러리인줄 알았는데..
+>
+> > 이번 작업에서 백앤드에서는 노드js를 사용해보려고 했다. API연결을 백으로 해야한다면, 지금 사용하면 되겠다 싶어 알아보았는데 JavaScript의 또다른 라이브러리 Node.js. React와는 또다른 라이브러리로 구조를 다시 작업해야 한다.
+> >
+> > > Node.js를 공부해보자!
 
 ## 240109
 
