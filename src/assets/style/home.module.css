@@ -10,11 +10,11 @@
 .homeContn h2 {
   color: #fff;
   position: absolute;
-  top: 35%;
-  left: 9vw;
+  top: 50%;
+  left: 10vw;
   transform: translateY(-50%);
   font-size: 4rem;
-  line-height: 1.5;
+  line-height: 1.4;
   font-weight: 600;
 }
 .homeContn h2 em {

@@ -9,6 +9,7 @@ const Header = () => {
     <header className={headerstyle.header}>
       <h1 className={headerstyle.logo}>
         <Link to="/">
+          <img src={path + "/images/logo.jpg"} alt="" />
           <em>인천국제공항</em>
         </Link>
       </h1>

@@ -8,18 +8,26 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .header .logo {
-  background: center / contain no-repeat url("../../../public/images/logo.jpg");
+  width: 50%;
+  cursor: pointer;
+  position: relative;
 }
 .header .logo em {
-  padding-left: 200px;
+  vertical-align: baseline;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-55%);
+  margin-left: 10px;
   font-size: 1.75rem;
+  font-weight: 600;
 }
 .navigation {
   display: flex;
   justify-content: space-between;
-  /* width: 50%; */
+  width: 35%;
 }
 .navigation li {
   position: relative;

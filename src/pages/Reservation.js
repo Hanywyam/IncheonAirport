@@ -1,12 +1,11 @@
-import React from "react";
+import reservStyle from "../assets/style/reserv.module.css";
 
 const Reservation = () => {
   return (
     <div>
-      <h2>
+      <h2 className={reservStyle.Title}>
         <em>Incheon Airport</em> 쉽고 편리한 주차 예약으로 즐거운 여행을!
       </h2>
-      <h3>주차장 예약</h3>
     </div>
   );
 };

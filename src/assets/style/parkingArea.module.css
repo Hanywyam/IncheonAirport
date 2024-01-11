@@ -1,0 +1,43 @@
+/* parkingArea */
+.Title {
+  width: 100%;
+  height: 160px;
+  line-height: 1.3;
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 0 10vw;
+  box-sizing: border-box;
+  background: center / cover no-repeat url(../../../public/images/bg_2.jpg);
+}
+.Title em {
+  display: block;
+  font-weight: 400;
+  padding-top: calc(160px / 2 - 1.8rem * 1.3);
+}
+.tmnalContn {
+  width: calc(100% - 20vw);
+  margin: 30px auto;
+  box-sizing: border-box;
+}
+.tmnalContn button {
+  border: 0;
+  margin: 5px 10px;
+  padding: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.ActiveBtn {
+  color: #6481c0;
+  font-weight: 800;
+}
+
+.tmnalContn .tmnalWrap {
+  width: 80%;
+  margin: 15px auto 50px;
+}
+.tmnalContn .tmnalWrap img {
+  width: 100%;
+  object-fit: cover;
+}
