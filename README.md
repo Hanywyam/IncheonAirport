@@ -54,7 +54,7 @@ Import trace for requested module:
 }}}
 
 // 서버 오류
-Access to XMLHttpRequest at 'http://apis.data.go.kr/B551177/StatusOfParking/getTrackingParking?serviceKey=5SVTXpDxj6L4yXqqxYzgW%2FoV%2FfKo4RrzYpL1JNuxk7vaSXA%2FwC11y%2BDdfjIrs6SRZ2lwAZuJGXy8TIPl2hAsvA%3D%3D&type=json' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+Access to XMLHttpRequest at '(http://apis.data.go.kr/B551177/StatusOfParking/getTrackingParking?serviceKey=5SVTXpDxj6L4yXqqxYzgW%2FoV%2FfKo4RrzYpL1JNuxk7vaSXA%2FwC11y%2BDdfjIrs6SRZ2lwAZuJGXy8TIPl2hAsvA%3D%3D&type=json)' from origin '(http://localhost:3000)' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
 
 > > > CORS설정을 헤더에 넣어보기도 하고, header의 내용을 지워보기도 해봤지만 계속 같은 오류의 반복이었다. 그러던 중 헤더 자체를 지워 `axios.get(URL)`로 변경했을 뿐인데..해결되었다.
