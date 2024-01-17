@@ -40,6 +40,9 @@ Import trace for requested module:
 > > api를 연결했는데 자꾸 cors 오류가 난다. `rewrites`에 cors설정을 해도 같은 오류가 반복되었다.
 
 ```
+// 서버 오류
+Access to XMLHttpRequest at 'APIurl' from origin '(http://localhost:3000)' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
 // pages.js
  useEffect(() => {
     const getData = async () => {
@@ -52,9 +55,6 @@ Import trace for requested module:
         });
         // 이하 생략
 }}}
-
-// 서버 오류
-Access to XMLHttpRequest at 'APIurl' from origin '(http://localhost:3000)' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
 
 > > > CORS설정을 헤더에 넣어보기도 하고, header의 내용을 지워보기도 해봤지만 계속 같은 오류의 반복이었다. 그러던 중 헤더 자체를 지워 `axios.get(URL)`로 변경했을 뿐인데..해결되었다.
