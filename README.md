@@ -6,11 +6,35 @@
 
 # :boom: Project Timeline
 
-## 240110-14
+## 240110-20
 
-- Next.js 공부
+- Next.js 공부 및 프로젝트 적용
 - mongoDB 적용 `npm i mongdb`
-- 예약 데이터 연결 완료 -> 데이터 가져오기가 안됨.
+- 예약 데이터 연결 완료 -> 조회한 데이터 가져오기가 안됨.
+  > 문제 1 : mongoDB의 데이터 중 특정 값 조회하여 가져오기
+  >
+  > > 'child_process'에대한 아래와 같은 에러가 발생...
+
+```
+Failed to compile
+./node_modules/mongodb/lib/client-side-encryption/mongocryptd_manager.js:34:24
+Module not found: Can't resolve 'child_process'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/mongodb/lib/client-side-encryption/auto_encrypter.js
+./node_modules/mongodb/lib/index.js
+./utill/database.js
+./app/checking/confirm.js
+```
+
+- [오류참고1](https://stackoverflow.com/questions/77773159/how-to-query-database-using-react-redux-toolkit-in-nextjs14)
+- [오류참고2](https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/)
+- [오류참고3](https://www.mongodb.com/community/forums/t/performance-improvement-for-nextjs-mongodb-app/212889/1)
+- [오류참고4](https://stackoverflow.com/questions/70034774/nextjs-fetching-data-from-mongodb-using-getserversideprops)
+
+> 문제 2 : openAPI 연결 중 CORS 오류가 난다!
 
 ## 240110
 
@@ -21,9 +45,10 @@
 
 > 문제 1 : 사용하는 API 데이터포맷도 XML 이었다.
 >
-> > 유형은 [xml, json]이었지만, default=xml로 작성되어 있었다. json만 다뤄봐서 xml은 생소했다. [TCPschool:xml](https://www.tcpschool.com/xml/intro)
-
-> 문제 2 : Next.js는 백엔드 라이브러리인줄 알았는데..
+> > 유형은 [xml, json]이었지만, default=xml로 작성되어 있었다. json만 다뤄봐서 xml은 생소했다. <!-- [TCPschool:xml](https://www.tcpschool.com/xml/intro) -->
+> >
+> > > type값을 이용하여 json으로 변경해서 사용해보자! <br/> xml, json 두타입을 제공하는 API의 경우, 기본설정이 xml이라도 타입값을 이용하여 json으로 변경이 가능하다!
+> > > 문제 2 : Next.js는 백엔드 라이브러리인줄 알았는데..
 >
 > > 이번 작업에서 백앤드에서는 노드js를 사용해보려고 했다. API연결을 백으로 해야한다면, 지금 사용하면 되겠다 싶어 알아보았는데 JavaScript의 또다른 라이브러리로 '리액트를 기반으로하는 라이브러리'인 Next.js. React와는 또다른 라이브러리로 구조를 다시 작업해야 한다.
 > >

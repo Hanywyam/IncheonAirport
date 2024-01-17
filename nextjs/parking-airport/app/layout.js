@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
           <h1 className="logo">
             <Link href="/">
               <img src="./logo.jpg" alt="logo" />
-              <em>인천국제공항</em>
+              <em>인천국제공항 주차장 안내</em>
             </Link>
           </h1>
 

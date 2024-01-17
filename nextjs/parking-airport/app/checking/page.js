@@ -1,40 +1,12 @@
-// "use client";
-// import { useEffect, useState } from "react";
 import Image from "next/image";
 import CheckInfo from "./page.module.css";
 import { connectDB } from "@/utill/database";
-/* 
-async function fetchData() {
-  // API 요청을 통해 몽고디비에서 데이터 가져오기
-  const response = await fetch("/api/reserv", {
-    method: "POST",
-    // 필요한 경우 다양한 설정을 추가할 수 있습니다.
-  });
 
-  if (!response.ok) {
-    throw new Error("데이터를 가져오는데 실패했습니다.");
-  }
+export default async function Checking() {
+  const client = await connectDB;
+  const db = client.db("parking");
+  let result = await db.collection("reserv").find().toArray();
 
-  const data = await response.json();
-  return data;
-}
- */
-
-export default function Checking() {
-  /* 
-  const [reservationData, setReservationData] = useState([]);
-
-  useEffect(() => {
-    // 페이지가 로드될 때 데이터를 가져오도록 useEffect 사용
-    fetchData()
-      .then((data) => {
-        setReservationData(data);
-      })
-      .catch((error) => {
-        console.error("데이터를 가져오는 동안 오류 발생:", error.message);
-      });
-  }, []); // 빈 배열을 전달하여 컴포넌트가 처음 마운트될 때만 실행
- */
   return (
     <div>
       <h2 className={CheckInfo.Title}>
@@ -54,22 +26,28 @@ export default function Checking() {
           </tr>
         </thead>
         <tbody>
-          {/* 
-          {reservationData.map((reservation) => (
-            <tr key={reservation._id}>
-              <td>{reservation._id}</td>
-              <td>{reservation.terminal}</td>
-              <td>{reservation.parkingArea}</td>
-              <td>{reservation.carNumber}</td>
-              <td>{reservation.usageDateTime}</td>
-              <td>{reservation.status}</td>
-              <td>
-                <button>변경</button>
-                <button>취소</button>
-              </td>
+          {result ? (
+            result.map((reservation) => (
+              <tr key={reservation._id}>
+                <td>{reservation._id}</td>
+                <td>{reservation.terminal}</td>
+                <td>{reservation.parkingArea}</td>
+                <td>{reservation.carNum}</td>
+                <td>
+                  {reservation.reservIn} ~ {reservation.reservOut}
+                </td>
+                <td>예약완료</td>
+                <td>
+                  <button>변경</button>
+                  <button>취소</button>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="7">검색 결과가 없습니다.</td>
             </tr>
-          ))}
-          */}
+          )}
         </tbody>
       </table>
     </div>

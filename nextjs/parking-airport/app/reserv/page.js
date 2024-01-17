@@ -31,12 +31,29 @@ export default function Reserv() {
           <input type="date" name="reservOut" placeholder="출차일시" />
         </label>
 
-        <label htmlFor="carNum" name="carNum">
+        <label htmlFor="carNum" name="carNum" style={{ width: 5 }}>
           <input
-            type="number"
+            style={{ width: 50 }}
+            type="text"
             name="carNum"
-            pattern="[0-9]{2}-[0-9]{4}"
-            placeholder="차량번호"
+            pattern="[0-9]{2}"
+            placeholder="예) 00"
+          />
+          -
+          <input
+            style={{ width: 50 }}
+            type="text"
+            name="carNum"
+            pattern="{1}"
+            placeholder="가"
+          />
+          -
+          <input
+            style={{ width: 100 }}
+            type="text"
+            name="carNum"
+            pattern="[0-9]{4}"
+            placeholder="0000로 입력"
           />
         </label>
 
@@ -45,13 +62,13 @@ export default function Reserv() {
             type="tel"
             name="phoneNum"
             pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-            placeholder="휴대폰번호"
+            placeholder="예)010-0000-0000"
             required
           />
         </label>
 
         <label htmlFor="password" name="password">
-          <input type="password" name="password" placeholder="비밀번호" />
+          <input type="password" name="password" placeholder="4~15자리 입력" />
         </label>
         <button type="submit">확인</button>
       </form>

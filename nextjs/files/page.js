@@ -30,7 +30,12 @@ export default function ParkingArea() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get(URL);
+        const res = await axios.get(URL, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+          },
+        });
         console.log(res.data);
         setData(res.data);
         setError(null);
@@ -77,10 +82,10 @@ function Parking1(props) {
   return (
     <div>
       <ul>
-        <li>주차 층수: {props.data.floor}</li>
-        <li>주차 수: {props.data.parking}</li>
-        <li>잔여 주차 수: {props.data.parkingarea}</li>
-        <li>업데이트 날짜: {props.data.datetm}</li>
+        <li>{props.data.floor}</li>
+        <li>{props.data.parking}</li>
+        <li>{props.data.parkingarea}</li>
+        <li>{props.data.datetm}</li>
       </ul>
     </div>
   );
