@@ -71,9 +71,10 @@ Access to XMLHttpRequest at 'APIurl' from origin '(http://localhost:3000)' has b
 > > 유형은 [xml, json]이었지만, default=xml로 작성되어 있었다. json만 다뤄봐서 xml은 생소했다. <!-- [TCPschool:xml](https://www.tcpschool.com/xml/intro) -->
 > >
 > > > type값을 이용하여 json으로 변경해서 사용해보자! <br/> xml, json 두타입을 제공하는 API의 경우, 기본설정이 xml이라도 타입값을 이용하여 json으로 변경이 가능하다!
-> > > 문제 2 : Next.js는 백엔드 라이브러리인줄 알았는데..
+
+> 문제 2 : Next.js는 백엔드 라이브러리인줄 알았는데..
 >
-> > 이번 작업에서 백앤드에서는 노드js를 사용해보려고 했다. API연결을 백으로 해야한다면, 지금 사용하면 되겠다 싶어 알아보았는데 JavaScript의 또다른 라이브러리로 '리액트를 기반으로하는 라이브러리'인 Next.js. React와는 또다른 라이브러리로 구조를 다시 작업해야 한다.
+> > 이번 작업에서 백앤드에서는 노드js를 사용해보려고 했다. API연결을 백으로 해야한다면, "지금 사용하면 되겠다" 싶어 알아보았는데 '리액트를 기반으로하는 라이브러리'로 풀스텍 라이브러리를 제공했다. React와 별개로 JavaScript의 또 다른 라이브러리로 구조를 다시 작업해야 한다.
 > >
 > > > Next.js를 공부해보자!
 
