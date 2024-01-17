@@ -11,9 +11,10 @@
 - Next.js 공부 및 프로젝트 적용
 - mongoDB 적용 `npm i mongdb`
 - 예약 데이터 연결 완료 -> 조회한 데이터 가져오기가 안됨.
-  > 문제 1 : mongoDB의 데이터 중 특정 값 조회하여 가져오기
-  >
-  > > 'child_process'에대한 아래와 같은 에러가 발생...
+
+> 문제 1 : mongoDB의 데이터 중 특정 값 조회하여 가져오기
+>
+> > 'child_process'에대한 아래와 같은 에러가 발생...
 
 ```
 Failed to compile
