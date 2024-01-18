@@ -12,8 +12,6 @@ export default async function handler(req, res) {
       return res.status(200).redirect(302, "/checking");
     } catch (err) {
       console.log(err);
-    } finally {
-      await client.close();
     }
   }
 }

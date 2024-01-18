@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import Image from "next/image";
 import pAreaStyle from "./page.module.css";
 import { useEffect, useState } from "react";
 
@@ -27,8 +28,8 @@ export default function ParkingZone({ URL }) {
     const getData = async () => {
       try {
         const res = await axios.get(URL);
-        console.log(res.data);
-        setData(res.data);
+        console.log(res.data.response.body.items);
+        setData(res.data.response.body.items);
         setError(null);
       } catch (err) {
         setError("데이터를 불러오는 중 에러가 발생");
@@ -56,28 +57,73 @@ export default function ParkingZone({ URL }) {
       </button>
 
       <div className={pAreaStyle.tmnalWrap}>
-        {showTab1 && <Parking2 />}
-        {showTab2 && <Parking2 />}
+        {showTab1 && (
+          <Parking1 data={data} idx={[0, 1, 2, 8, 9, 10, 11, 12, 13, 14]} />
+        )}
+        {showTab2 && <Parking2 data={data} idx={[3, 4, 5, 6, 7, 15, 16]} />}
       </div>
     </div>
   );
 }
 
-function Parking1({ data }) {
+function Parking1({ data, idx }) {
+  // console.log(data.datetm);
   return (
-    <div>
-      {data.map((itm, idx) => {
-        return (
-          <ul key={idx}>
-            <li>주차 층수: {itm.floor}</li>
-            <li>주차 수: {itm.parking}</li>
-            <li>잔여 주차 수: {itm.parkingarea}</li>
-            <li>업데이트 날짜: {itm.datetm}</li>
-          </ul>
-        );
-      })}
+    <div className={pAreaStyle.parkingCont}>
+      <div>
+        {data
+          .filter((a, i) => idx.includes(i))
+          .map((itm, idx) => {
+            const totalParking = parseInt(itm.parkingarea);
+            const remainingParkingArea = parseInt(itm.parking);
+            const ratio = Math.max(
+              0,
+              remainingParkingArea > 0
+                ? Math.floor(totalParking - remainingParkingArea)
+                : 0
+            );
+            const displayValue = ratio === 0 ? "만차" : `${ratio}대`;
+
+            return (
+              <ul key={idx} className={pAreaStyle.parkingWrap}>
+                <li>
+                  {itm.floor}
+                  {displayValue}
+                </li>
+              </ul>
+            );
+          })}
+      </div>
+      <div>
+        <Image src="/parking_zone1.png" alt="설명" width={1100} height={770} />
+      </div>
     </div>
   );
 }
 
-function Parking2(props) {}
+function Parking2({ data, idx }) {
+  return (
+    <div>
+      {data
+        .filter((a, i) => idx.includes(i))
+        .map((itm, idx) => {
+          const totalParking = parseInt(itm.parkingarea);
+          const remainingParkingArea = parseInt(itm.parking);
+          const ratio = Math.max(
+            0,
+            remainingParkingArea > 0
+              ? Math.floor(totalParking - remainingParkingArea)
+              : 0
+          );
+          const displayValue = ratio === 0 ? "만차" : `${ratio}대`;
+
+          return (
+            <ul key={idx}>
+              <li>{itm.floor}</li>
+              <li>{displayValue}</li>
+            </ul>
+          );
+        })}
+    </div>
+  );
+}

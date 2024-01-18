@@ -1,6 +1,6 @@
 "use client";
 
-export default function Btn({ result, i }) {
+export default function Btn({ result }) {
   return (
     <>
       <button>변경</button>

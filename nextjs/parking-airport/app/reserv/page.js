@@ -8,7 +8,7 @@ export default function Reserv() {
         <em>Incheon Airport</em> 쉽고 편리한 주차 예약으로 즐거운 여행을
       </h2>
       <form action="/api/reserv" method="POST" className={reservStyle.form}>
-        <label htmlFor="terminal" name="terminal">
+        <label htmlFor="terminal">
           <select name="terminal" id="terminal">
             <option value="제1주차장">터미널 선택</option>
             <option value="제1주차장">제1주차장</option>
@@ -16,22 +16,22 @@ export default function Reserv() {
           </select>
         </label>
 
-        <label htmlFor="parkingArea" name="parkingArea">
+        <label htmlFor="parkingArea">
           <select name="parkingArea" id="parkingArea">
             <option value="예약주차장">주차장 선택</option>
             <option value="예약주차장">예약주차장</option>
           </select>
         </label>
 
-        <label htmlFor="reservIn" name="reservIn">
+        <label htmlFor="reservIn">
           <input type="date" name="reservIn" placeholder="입차 일시" />
         </label>
 
-        <label htmlFor="reservOut" name="reservOut">
+        <label htmlFor="reservOut">
           <input type="date" name="reservOut" placeholder="출차일시" />
         </label>
 
-        <label htmlFor="carNum" name="carNum" style={{ width: 5 }}>
+        <label htmlFor="carNum" style={{ width: 5 }}>
           <input
             style={{ width: 50 }}
             type="text"
@@ -57,7 +57,7 @@ export default function Reserv() {
           />
         </label>
 
-        <label htmlFor="phoneNum" name="phoneNum">
+        <label htmlFor="phoneNum">
           <input
             type="tel"
             name="phoneNum"
@@ -67,7 +67,7 @@ export default function Reserv() {
           />
         </label>
 
-        <label htmlFor="password" name="password">
+        <label htmlFor="password">
           <input type="password" name="password" placeholder="4~15자리 입력" />
         </label>
         <button type="submit">확인</button>

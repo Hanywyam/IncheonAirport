@@ -41,3 +41,26 @@
   width: 100%;
   object-fit: cover;
 }
+.parkingCont {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.parkingWrap {
+  position: absolute;
+}
+.parkingWrap:nth-child(1) {
+  top: 20vh;
+  left: 50%;
+}
+.parkingWrap:nth-child(2) {
+  top: 25%;
+  left: 50%;
+}
+.parkingWrap:nth-child(3) {
+  top: 30%;
+  left: 50%;
+}
+.parkingWrap:nth-child(4) {
+}
+/* svg로 같이 움직이게 */

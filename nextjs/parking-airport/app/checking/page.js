@@ -29,7 +29,7 @@ export default async function Checking() {
           {result ? (
             result.map((reservation, i) => (
               <tr key={reservation._id}>
-                <td>{reservation._id}</td>
+                <td children={JSON.stringify({})}>{reservation._id}</td>
                 <td>{reservation.terminal}</td>
                 <td>{reservation.parkingArea}</td>
                 <td>{reservation.carNum}</td>
@@ -38,7 +38,7 @@ export default async function Checking() {
                 </td>
                 <td>예약완료</td>
                 <td>
-                  <Btn result={reservation} i={i} />
+                  <Btn key={i} result={reservation} />
                 </td>
               </tr>
             ))
