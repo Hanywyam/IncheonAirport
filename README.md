@@ -2,7 +2,7 @@
 
 ### 인천공항 주차장 실시간 주차 현황 및 장기주차 예약 시스템 Incheon Airport parking area information and reservation application
 
-<!-- ### [⬇프로젝트 보러가기](#프로젝트-보러가기-1) -->
+### [⬇프로젝트 보러가기](#프로젝트-보러가기-1)
 
 # :boom: Project Timeline
 
@@ -10,7 +10,9 @@
 
 - Next.js 공부 및 프로젝트 적용
 - mongoDB 적용 `npm i mongdb`
-- 예약 데이터 연결 완료 -> 조회한 데이터 가져오기가 안됨.
+- 예약 데이터 연결 완료 -> 조회한 특정 데이터 가져오기가 안됨.
+- 예약한 내역 삭제 버튼 작업
+- openAPI 연결 난항 : 값을 받아오는것까지는 완료. 출력이 문제.
 
 > 문제 1 : mongoDB의 데이터 중 특정 값 조회하여 가져오기
 >
@@ -156,7 +158,6 @@ Access to XMLHttpRequest at 'APIurl' from origin '(http://localhost:3000)' has b
 - 기본 UI는 인천공항의 주차 안내 시스템을 바탕으로 제작할 예정.
 - API는 실시간 주차현황을 가져와 사용하고, 장기 주차 예약 시스템은 가상의 주차장을 설계하여 구성할 계획.
 
-<!--
 # 💫프로젝트 보러가기
 
-### [⬆ Go to Top](#-team-nunettine) -->
+### [⬆ Go to Top](#-IncheonAirport)

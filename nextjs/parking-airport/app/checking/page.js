@@ -1,6 +1,6 @@
-import Image from "next/image";
 import CheckInfo from "./page.module.css";
 import { connectDB } from "@/utill/database";
+import Btn from "./Btn";
 
 export default async function Checking() {
   const client = await connectDB;
@@ -27,7 +27,7 @@ export default async function Checking() {
         </thead>
         <tbody>
           {result ? (
-            result.map((reservation) => (
+            result.map((reservation, i) => (
               <tr key={reservation._id}>
                 <td>{reservation._id}</td>
                 <td>{reservation.terminal}</td>
@@ -38,8 +38,7 @@ export default async function Checking() {
                 </td>
                 <td>예약완료</td>
                 <td>
-                  <button>변경</button>
-                  <button>취소</button>
+                  <Btn result={reservation} i={i} />
                 </td>
               </tr>
             ))
