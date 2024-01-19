@@ -108,3 +108,9 @@ header .logo em {
   justify-content: space-between;
   align-items: center;
 }
+h3 {
+  width: 100%;
+  font-size: 1.8rem;
+  margin: 25px 10vw 0;
+  color: #222;
+}

@@ -32,7 +32,9 @@
   color: #6481c0;
   font-weight: 800;
 }
-
+.parkingCont {
+  display: flex;
+}
 .tmnalContn .tmnalWrap {
   width: 80%;
   margin: 15px auto 50px;
@@ -41,6 +43,61 @@
   width: 100%;
   object-fit: cover;
 }
+.parkingImg {
+  border: 1px solid #444;
+  padding: 30px auto;
+  margin: 0 auto;
+  width: 40%;
+  height: 100%;
+}
+.parkingImg img {
+  aspect-ratio: 4 /3;
+  object-fit: cover;
+}
+.parkingTxt {
+  width: 60%;
+  margin: 0 auto;
+}
+.parkingWrap {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid #444;
+  border-top: none;
+  border-collapse: collapse;
+}
+.parkingWrap:nth-child(1) {
+  border-top: 1px solid #444;
+}
+.parkingWrap th {
+  padding: 10px;
+  color: #fff;
+  font-weight: normal;
+  background-color: #6481c0;
+}
+.parkingWrap td {
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  border-left: 1px solid #444;
+}
+/* 임시방편
+.parkingWrap {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+}
+.parkingWrap li {
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #444;
+}
+.parkingWrap li:nth-child(1) {
+  background-color: #6481c0;
+  color: #fff;
+}
+*/
+/*
 .parkingCont {
   position: relative;
   width: 100%;
@@ -60,7 +117,9 @@
 .parkingWrap:nth-child(3) {
   top: 30%;
   left: 50%;
+  height: ;
+  width: ;
 }
 .parkingWrap:nth-child(4) {
 }
-/* svg로 같이 움직이게 */
+ svg로 같이 움직이게 */

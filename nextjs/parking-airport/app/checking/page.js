@@ -12,7 +12,7 @@ export default async function Checking() {
       <h2 className={CheckInfo.Title}>
         <em>Incheon Airport</em> 공항의 역사를 새로 쓰다
       </h2>
-
+      <h3>장기 주차장 예약 조회/변경/취소</h3>
       <table className={CheckInfo.table}>
         <thead>
           <tr>

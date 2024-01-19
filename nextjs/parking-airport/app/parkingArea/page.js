@@ -12,7 +12,7 @@ export default function ParkingArea() {
       <h2 className={pAreaStyle.Title}>
         <em>Incheon Airport</em> 여행의 시작과 끝을 안전하게
       </h2>
-
+      <h3>주차장 터미널별 실시간 현황</h3>
       <ParkingZone URL={URL} />
     </div>
   );

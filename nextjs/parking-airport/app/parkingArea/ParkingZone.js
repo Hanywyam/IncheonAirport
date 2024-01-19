@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import Image from "next/image";
+// import PZone1 from "/public/svg/Parkingzone1.svg";
 import pAreaStyle from "./page.module.css";
 import { useEffect, useState } from "react";
 
@@ -48,13 +49,17 @@ export default function ParkingZone({ URL }) {
       <button
         onClick={() => toggleTab(1)}
         className={showTab1 ? pAreaStyle.ActiveBtn : ""}>
-        제1주차장
+        제1터미널
       </button>
       <button
         onClick={() => toggleTab(2)}
         className={showTab2 ? pAreaStyle.ActiveBtn : ""}>
-        제2주차장
+        제2터미널
       </button>
+
+      {/* <div>
+        <PZone1 width={1000} height={700} />
+      </div> */}
 
       <div className={pAreaStyle.tmnalWrap}>
         {showTab1 && (
@@ -70,7 +75,14 @@ function Parking1({ data, idx }) {
   // console.log(data.datetm);
   return (
     <div className={pAreaStyle.parkingCont}>
-      <div>
+      <div className={pAreaStyle.parkingImg}>
+        <Image
+          src="/map_incheon_airport_glance01_ko.png"
+          width={580}
+          height={320}
+        />
+      </div>
+      <div className={pAreaStyle.parkingTxt}>
         {data
           .filter((a, i) => idx.includes(i))
           .map((itm, idx) => {
@@ -85,17 +97,12 @@ function Parking1({ data, idx }) {
             const displayValue = ratio === 0 ? "만차" : `${ratio}대`;
 
             return (
-              <ul key={idx} className={pAreaStyle.parkingWrap}>
-                <li>
-                  {itm.floor}
-                  {displayValue}
-                </li>
-              </ul>
+              <table key={idx} className={pAreaStyle.parkingWrap}>
+                <th>{itm.floor}</th>
+                <td>{displayValue}</td>
+              </table>
             );
           })}
-      </div>
-      <div>
-        <Image src="/parking_zone1.png" alt="설명" width={1100} height={770} />
       </div>
     </div>
   );
@@ -103,27 +110,36 @@ function Parking1({ data, idx }) {
 
 function Parking2({ data, idx }) {
   return (
-    <div>
-      {data
-        .filter((a, i) => idx.includes(i))
-        .map((itm, idx) => {
-          const totalParking = parseInt(itm.parkingarea);
-          const remainingParkingArea = parseInt(itm.parking);
-          const ratio = Math.max(
-            0,
-            remainingParkingArea > 0
-              ? Math.floor(totalParking - remainingParkingArea)
-              : 0
-          );
-          const displayValue = ratio === 0 ? "만차" : `${ratio}대`;
+    <div className={pAreaStyle.parkingCont}>
+      <div className={pAreaStyle.parkingImg}>
+        <Image
+          src="/map_incheon_airport_glance02_ko.png"
+          width={580}
+          height={320}
+        />
+      </div>
+      <div className={pAreaStyle.parkingTxt}>
+        {data
+          .filter((a, i) => idx.includes(i))
+          .map((itm, idx) => {
+            const totalParking = parseInt(itm.parkingarea);
+            const remainingParkingArea = parseInt(itm.parking);
+            const ratio = Math.max(
+              0,
+              remainingParkingArea > 0
+                ? Math.floor(totalParking - remainingParkingArea)
+                : 0
+            );
+            const displayValue = ratio === 0 ? "만차" : `${ratio}대`;
 
-          return (
-            <ul key={idx}>
-              <li>{itm.floor}</li>
-              <li>{displayValue}</li>
-            </ul>
-          );
-        })}
+            return (
+              <table key={idx} className={pAreaStyle.parkingWrap}>
+                <th>{itm.floor}</th>
+                <td>{displayValue}</td>
+              </table>
+            );
+          })}
+      </div>
     </div>
   );
 }

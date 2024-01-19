@@ -2,7 +2,7 @@
 .homeContn {
   background-color: #222;
   width: calc(100% - 100px);
-  height: 90vh;
+  height: 82vh;
   box-sizing: border-box;
   margin: 0 auto;
   background: center / cover no-repeat url("/main_bg.jpg");

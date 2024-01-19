@@ -18,8 +18,8 @@
 
 .table {
   width: 80%;
-  height: 30vh;
-  margin: 50px auto;
+  height: calc(60vh - 100px);
+  margin: 30px auto;
   border: 1px solid #444;
   border-collapse: collapse;
 }
