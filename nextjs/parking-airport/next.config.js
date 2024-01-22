@@ -34,4 +34,8 @@ module.exports = {
     }
     return config;
   },
+  assetPrefix:
+    process.env.NODE_ENV === "production"
+      ? "https://hanywyam.github.io/IncheonAirport/"
+      : "",
 };
